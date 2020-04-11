@@ -29,8 +29,8 @@
 						<header class="major">
 							<h2>Acerca de mí.</h2>
 						</header>
-						<p>Néstor Yzmaya Tarinda, 30 años, Mexicano de nacimiento, Conocí Html gracias a la extinguída red Social <a target="_blank" href="www.myspace.com">Myspace</a> cuando tenía 16 años, Empecé a desarrollar en forma desde hace 9 años, tengo una Licenciatura en Sistemas computacionales, y un Posgrado en Dirección de proyectos cursando en la actualidad.</p>
-						<p>Me encanta la música y el cine, tengo mi banda de música, con composición original.<a target="_blank" href=""> Six Suns</a></p>
+						<p>Néstor Yzmaya Tarinda, 30 años, Mexicano de nacimiento, Conocí Html gracias a la extinguída red Social <a target="_blank" href="https://myspace.com/">Myspace</a> cuando tenía 16 años, Empecé a desarrollar en forma desde hace 9 años, tengo una Licenciatura en Sistemas computacionales, y un Posgrado en Dirección de proyectos cursando en la actualidad.</p>
+						<p>Me encanta la música y el cine, tengo mi banda de música, con composición original.<a target="_blank" href="https://www.youtube.com/watch?v=rvuBPpENIGg"> Six Suns</a></p>
 						<p>Estoy especializado en el Front End (Html5, Javascript, Typescript, Css3, Vue Js), y en el  Backend uso distribuciones Linux y Node Js con express y Handlebars entre otras dependencias.</p>
 						<ul class="actions">
 							<li><a href="#" class="button">Leer más.</a></li>
@@ -42,24 +42,24 @@
 						<h2>Trabajos recientes</h2>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
+								<a target="_blank" href="http://www.payboom.mx" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
 								<h3>Payboom</h3>
 								<p>Sistema de pago Cashless, utilizado en Centro América.</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-								<h3>Ultricies lacinia interdum</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<a target="_blank" href="http://sems.gob.mx/conecta" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
+								<h3>Fundación telefónica SEP - Movistar</h3>
+								<p>Mide el imácto en los jóvenes, acerca de los cursos que toman en la actualidad.</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
-								<h3>Tortor metus commodo</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<a target="_blank" href="http://www.decidetusestudios.sep.gob.mx/" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
+								<h3>Decide Tus Estudios</h3>
+								<p>Orientación Vocacional, Test aplicable.</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
-								<h3>Quam neque phasellus</h3>
-								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+								<a target="_blank" href="https://yzmaya.github.io/Register-of-cash" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
+								<h3>Register of cash</h3>
+								<p>Aplicación que registra tus gastos día con día..</p>
 							</article>
 						</div>
 						<!--<ul class="actions">
@@ -73,11 +73,11 @@
 						<p>Te comparto mi información de contacto, para que me platíques más sobre tú proyecto.</p>
 						<div class="row">
 							<div class="col-8 col-12-small">
-								<form method="post" action="#">
+								<form method="post" action="#" id="myform">
 									<div class="row gtr-uniform gtr-50">
-										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Nombre" /></div>
-										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Correo Electrónico" /></div>
-										<div class="col-12"><textarea name="message" id="message" placeholder="Mensaje" rows="4"></textarea></div>
+										<div class="col-6 col-12-xsmall"><input type="text" name="from_name"  id="1" placeholder="Nombre" required /></div>
+										<div class="col-6 col-12-xsmall"><input type="email" name="reply_to" id="2" placeholder="Correo Electrónico" required=""/></div>
+										<div class="col-12"><textarea name="message_html" id="3" placeholder="Mensaje" rows="4" required=""></textarea></div>
 									</div>
 								</form>
 								<ul class="actions">
@@ -444,6 +444,39 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+			<script type="text/javascript">
+				(function () {
+					emailjs.init("user_K7uRYA51OVmcCAkEXgVEW");
+				})();
+			</script>
+
+			<script>
+				var myform = $("form#myform");
+				myform.submit(function (event) {
+					event.preventDefault();
+		
+					// Change to your service ID, or keep using the default service
+					var service_id = "default_service";
+					var template_id = "template_eluGX3dj";
+		
+					myform.find("button").text("Enviando...");
+					emailjs.sendForm(service_id, template_id, myform[0])
+						.then(function () {
+							alert("Muchas Gracias por contactar con nosotros! ,en breve, uno de nuestros agentes, se pondrá en contacto contigo para revisar los detalles de tu evento!");
+							document.getElementById('1').value = '';
+							document.getElementById('2').value = '';
+							document.getElementById('3').value = '';
+							myform.find("button").text("Send");
+						}, function (err) {
+							alert("Send email failed!\r\n Response:\n " + JSON.stringify(err));
+							myform.find("button").text("Send");
+						});
+					return false;
+				});
+			</script>
 
 	</body>
 </html>
